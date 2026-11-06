@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { stitches } from '../models/stitches.model';
 
 @Component({
   selector: 'app-stitches',
@@ -6,4 +7,5 @@ import { Component } from '@angular/core';
   templateUrl: './stitches.html',
   styleUrl: './stitches.css',
 })
-export class Stitches {}
+export class Stitches {
+}
