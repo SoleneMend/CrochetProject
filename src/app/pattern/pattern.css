@@ -1,0 +1,8 @@
+#basePattern {
+    background: #EED8C2;
+    border-radius: 15px;
+    
+    #titlePattern {
+        color : #E5896D;
+    }
+}
