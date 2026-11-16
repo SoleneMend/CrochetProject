@@ -1,8 +1,14 @@
-#baseStitches {
-    background: #E0B3AA;
-    border-radius: 15px;
-    
-    #titleStitches {
-        color : #963c50;
+.main-stitch {
+
+    background-color: var(--pink);
+
+    .stitches-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-row-gap: 5vh;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
     }
 }

@@ -1,9 +1,18 @@
+export type StitchCategory =
+    | "base"
+    | "variant"
+    | "increase-decrease"
+    | "texture"
+    | "fancy"
+    | "finishing";
+
 export class stitches {
     name: string;
-    abreviation: string;
+    abbreviation: string;
     img: string;
     video: string | null;
     language: "fr"|"en";
+    category: StitchCategory;
     steps: {
         description: string, 
         img: string | null,
@@ -11,20 +20,22 @@ export class stitches {
 
     constructor(
         name: string, 
-        abreviation: string, 
+        abbreviation: string, 
         img: string, 
         video: string | null, 
         language: "fr"|"en", 
+        category: StitchCategory,
         steps: { 
             description: string, 
             img: string | null,
         }[] 
     ) {
         this.name = name;
-        this.abreviation = abreviation;
+        this.abbreviation = abbreviation;
         this.img = img;
         this.video = video;
         this.language = language;
+        this.category = category;
         this.steps = steps;
     }
 }

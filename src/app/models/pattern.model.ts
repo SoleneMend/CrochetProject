@@ -1,5 +1,3 @@
-import { Stitches } from "../stitches/stitches";
-
 export class pattern {
     name: string;
     link: string[];
@@ -8,8 +6,8 @@ export class pattern {
     language: "fr"|"en";
     stitches: {
         name: string,
-        abreviation: string,
-        linkWiki: Stitches,
+        abbreviation: string,
+        linkWiki: string,
     }[];
     parts: {
         name: string,
@@ -27,8 +25,8 @@ export class pattern {
         language: "fr"|"en",
         stitches: {
             name: string,
-            abreviation: string,
-            linkWiki: Stitches,
+            abbreviation: string,
+            linkWiki: string,
         }[],
         parts: {
             name: string,

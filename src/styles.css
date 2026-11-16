@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --yellow : #FFC370;
+    --beige : #F2EBD9;
+    --orange : #E5896D;
+    --pink : #BD5E6B;
+
+    --light-orange : #EED8C2;
+    --light-pink : #E0B3AA;
+    --dark-pink : #963C50;
+}
+
+*{
+ padding: 0px;   
+ margin: 0px;
+}

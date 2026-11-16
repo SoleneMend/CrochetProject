@@ -1,0 +1,28 @@
+<p>stitches-page works!</p>
+
+<p>Abbreviation : {{ content.abbreviation }}</p>
+<p>Name : {{ content.name }}</p>
+
+<div>
+    <title> {{content.abbreviation}} : {{content.name}} </title>
+
+    @if (content.video) {
+        <a [href]="content.video" target="_blank">
+            Voir la vidéo
+        </a>
+    }
+
+    @for (step of content.steps; track $index) {
+        <div>
+            <h3> Etape {{ $index + 1 }} </h3>
+
+            <p> {{step.description}} </p>
+
+            @if (step.img) {
+                <img [src]="step.img" [alt]="'Step' + ($index + 1)">
+            }
+
+        </div>
+    }
+
+</div>

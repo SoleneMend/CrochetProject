@@ -1,4 +1,14 @@
-<div id="baseStitches" href="idkyet">
-    <img src="idkyet">
-    <h3 id="titleStitches">Name Stitches</h3>
-</div>
+<section class="main-stitch">
+    <h1> Stitches </h1>
+    
+    <h2> Stitches List </h2>
+    
+    <article class="stitches-list">
+        @for (stitch of stitchesList; track $index) {
+            <app-stitches-block 
+                [content]="stitch"
+                [index]="$index"
+            />
+        }
+    </article>
+</section>
