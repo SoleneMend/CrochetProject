@@ -1,4 +1,14 @@
-<div id="basePattern" href="idkyet">
-    <img src="idkyet">
-    <h3 id="titlePattern">Name Pattern</h3>
-</div>
+<section class="main-pattern">
+    <h1> Pattern </h1>
+    
+    <h2> Pattern List </h2>
+    
+    <article class="pattern-list">
+        @for (pattern of patternList; track $index) {
+            <app-pattern-block 
+                [content]="pattern"
+                [index]="$index"
+            />
+        }
+    </article>
+</section>

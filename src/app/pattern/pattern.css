@@ -1,5 +1,5 @@
-#basePattern {
-    background: #EED8C2;
+.main-pattern {
+    background: var(--beige);
     border-radius: 15px;
     
     #titlePattern {

@@ -1,1 +1,49 @@
 <p>pattern-page works!</p>
+
+<p>Name : {{ content.name }}</p>
+
+<div>
+    <title> {{content.name}} </title>
+
+    @for (link of content.link; track $index) {
+        <a [href]="link" target="_blank">
+            {{$index}} : Lien
+        </a>
+    }
+
+    <h3>Materiels</h3>
+    @for (materiel of content.material; track $index) {
+        <p>{{materiel}}</p>
+    }
+
+    <h3>Stitches Lists</h3>
+
+    @for (stitch of content.stitches; track $index) {
+        <p> {{stitch.abbreviation}} : {{stitch.name}} ( <a [routerLink]="stitch.linkWiki"> lien wiki </a> ) </p>
+    }
+
+    @for (part of content.parts; track $index) {
+        <div>
+            <h3> {{part.name}} </h3>
+
+            <ul> Materiels : 
+                @for (material of part.materials; track $index) {
+                    <li>{{material}}</li>
+                }
+            </ul>
+
+            <div>
+                @for (step of part.steps; track $index) {
+                    <p> 
+                        @if (step.round) {
+                            {{step.round}} : 
+                        }
+                        {{step.description}} 
+                    </p>
+                }
+            </div>
+
+        </div>
+    }
+
+</div>

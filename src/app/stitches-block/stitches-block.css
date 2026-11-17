@@ -17,13 +17,18 @@ a {
         padding-bottom: 10px;
         
         .block-image {
-            width: 70%;
+            width: 85%;
             height: 70%;
             background-color: var(--dark-pink);
+            border-radius: 15px;
         }
     
-        .titleStitches {
+        .text-stitches {
             color : var(--dark-pink);
+
+            .abbreviation-stitches{
+                font-style: italic;
+            }
         }
     }
 }

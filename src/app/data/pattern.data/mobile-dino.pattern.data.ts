@@ -1,20 +1,6 @@
-import { listStitches } from "../stitches.data";
-import { pattern } from "../../models/pattern.model";
+import { pattern, getStitchLink } from "../../models/pattern.model";
 
-// Retrouver l'index d'un point dans listStitches
-const getStitchLink = (abbreviation: string): string => {
-    const index = listStitches.findIndex(
-        stitch => stitch.abbreviation === abbreviation
-    );
 
-    if (index === -1) {
-        throw new Error(`Point de crochet introuvable : ${abbreviation}`);
-    }
-
-    return `/stitches/${index}`;
-};
-
-// Points utilisés dans le patron
 const mobileDinoStitches = [
     {
         name: 'Maille',

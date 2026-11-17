@@ -5,6 +5,7 @@
     --orange : #E5896D;
     --pink : #BD5E6B;
 
+    --dark-beige : #593D50;    
     --light-orange : #EED8C2;
     --light-pink : #E0B3AA;
     --dark-pink : #963C50;
@@ -13,4 +14,5 @@
 *{
  padding: 0px;   
  margin: 0px;
+ text-decoration: none;
 }

@@ -1,3 +1,5 @@
+import { listStitches } from "../data/stitches.data";
+
 export class pattern {
     name: string;
     link: string[];
@@ -46,3 +48,16 @@ export class pattern {
         this.parts = parts;
     }
 }
+
+
+export const getStitchLink = (abbreviation: string): string => {
+    const index = listStitches.findIndex(
+        stitch => stitch.abbreviation === abbreviation
+    );
+
+    if (index === -1) {
+        throw new Error(`Point de crochet introuvable : ${abbreviation}`);
+    }
+
+    return `/stitches/${index}`;
+};
