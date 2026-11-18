@@ -1,4 +1,7 @@
 .footer {
     color: var(--dark-beige);
     background-color: var(--beige);
+    position: relative;
+    margin-top: -1px;
+    height: 5vh;
 }
