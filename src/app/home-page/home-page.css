@@ -35,6 +35,34 @@
     height: 50vh;
 }
 
+.pattern-waves-bottom {
+    width: 100%;
+    height: 25px;
+    background-color: var(--pink);
+
+    position: relative;
+    z-index: 2;
+}
+
+.pattern-waves-bottom::before {
+    content: "";
+    position: absolute;
+    margin-top: -1px;
+    inset: 0;
+
+    background: radial-gradient(
+        circle at 25px 0,
+        var(--beige) 24px,
+        transparent 25px
+    );
+
+    background-size: 50px 25px;
+    background-repeat: repeat-x;
+
+    filter: drop-shadow(0px 4px 22.5px var(--dark-pink));
+    clip-path: inset(0 -50px -50px -50px);
+}
+
 .footer-waves-top {
     width: 100%;
     height: 25px;
