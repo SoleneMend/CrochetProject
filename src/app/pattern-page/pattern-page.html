@@ -1,49 +1,63 @@
-<p>pattern-page works!</p>
+<div class="pattern-page">
 
-<p>Name : {{ content.name }}</p>
+  <header class="pattern-header">
+    <h1>{{ content.name }}</h1>
+  </header>
 
-<div>
-    <title> {{content.name}} </title>
+  <main class="pattern-content">
 
-    @for (link of content.link; track $index) {
-        <a [href]="link" target="_blank">
-            {{$index}} : Lien
-        </a>
-    }
+    <section class="card">
+      <h3>Liens</h3>
+      <div class="links">
+        @for (link of content.link; track $index) {
+          <a [href]="link" target="_blank" rel="noopener">{{ $index + 1 }} : Lien</a>
+        }
+      </div>
+    </section>
 
-    <h3>Materiels</h3>
-    @for (materiel of content.material; track $index) {
-        <p>{{materiel}}</p>
-    }
+    <section class="card">
+      <h3>Matériels</h3>
+      <ul class="tags">
+        @for (materiel of content.material; track $index) {
+          <li>{{ materiel }}</li>
+        }
+      </ul>
+    </section>
 
-    <h3>Stitches Lists</h3>
-
-    @for (stitch of content.stitches; track $index) {
-        <p> {{stitch.abbreviation}} : {{stitch.name}} ( <a [routerLink]="stitch.linkWiki"> lien wiki </a> ) </p>
-    }
+    <section class="card">
+      <h3>Liste des points</h3>
+      @for (stitch of content.stitches; track $index) {
+        <p class="stitch">
+          <span class="abbr">{{ stitch.abbreviation }}</span>
+          {{ stitch.name }}
+          <a [routerLink]="stitch.linkWiki">lien wiki</a>
+        </p>
+      }
+    </section>
 
     @for (part of content.parts; track $index) {
-        <div>
-            <h3> {{part.name}} </h3>
+      <section class="card part">
+        <h3>{{ part.name }}</h3>
 
-            <ul> Materiels : 
-                @for (material of part.materials; track $index) {
-                    <li>{{material}}</li>
-                }
-            </ul>
+        <p class="label">Matériels :</p>
+        <ul class="tags">
+          @for (material of part.materials; track $index) {
+            <li>{{ material }}</li>
+          }
+        </ul>
 
-            <div>
-                @for (step of part.steps; track $index) {
-                    <p> 
-                        @if (step.round) {
-                            {{step.round}} : 
-                        }
-                        {{step.description}} 
-                    </p>
-                }
-            </div>
-
-        </div>
+        <ul class="steps">
+          @for (step of part.steps; track $index) {
+            <li>
+              @if (step.round) {
+                <strong>{{ step.round }} :</strong>
+              }
+              {{ step.description }}
+            </li>
+          }
+        </ul>
+      </section>
     }
 
+  </main>
 </div>

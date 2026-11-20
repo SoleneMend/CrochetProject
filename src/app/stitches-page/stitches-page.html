@@ -1,28 +1,30 @@
-<p>stitches-page works!</p>
+<div class="stitch-page">
 
-<p>Abbreviation : {{ content.abbreviation }}</p>
-<p>Name : {{ content.name }}</p>
+  <header class="stitch-header">
+    <h1>{{ content.abbreviation }} : {{ content.name }}</h1>
+  </header>
 
-<div>
-    <title> {{content.abbreviation}} : {{content.name}} </title>
+  <main class="stitch-content">
 
     @if (content.video) {
-        <a [href]="content.video" target="_blank">
-            Voir la vidéo
-        </a>
+      <a class="video-btn" [href]="content.video" target="_blank" rel="noopener">
+        ▶ Voir la vidéo
+      </a>
     }
 
-    @for (step of content.steps; track $index) {
-        <div>
-            <h3> Etape {{ $index + 1 }} </h3>
+    <div class="steps-grid">
+      @for (step of content.steps; track $index) {
+        <section class="card">
+          <h3>Étape {{ $index + 1 }}</h3>
 
-            <p> {{step.description}} </p>
+          <p>{{ step.description }}</p>
 
-            @if (step.img) {
-                <img [src]="step.img" [alt]="'Step' + ($index + 1)">
-            }
+          @if (step.img) {
+            <img [src]="step.img" [alt]="'Étape ' + ($index + 1)">
+          }
+        </section>
+      }
+    </div>
 
-        </div>
-    }
-
+  </main>
 </div>

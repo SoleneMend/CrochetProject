@@ -1,0 +1,133 @@
+:host {
+  --cream: #f2ecda;
+  --rose: #b95f6a;
+  --rose-dark: #9a4753;
+  --peach: #f9cdb5;
+  --text: #5a4036;
+  --scallop: 9px;
+
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--cream);
+  color: var(--text);
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+.stitch-page {
+  width: 100%;
+  padding-top: 18px; /* bande crème au-dessus du bandeau */
+}
+
+/* ---------- Bandeau festonné ---------- */
+.stitch-header {
+  position: relative;
+  width: 100%;
+  background: var(--rose);
+  padding: 56px 24px;
+  text-align: center;
+}
+
+.stitch-header::before,
+.stitch-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: var(--scallop);
+  background-size: calc(var(--scallop) * 2) var(--scallop);
+  background-repeat: repeat-x;
+}
+
+.stitch-header::before {
+  top: 0;
+  background-image: radial-gradient(
+    circle at 50% 0,
+    var(--cream) calc(var(--scallop) - 0.5px),
+    transparent var(--scallop)
+  );
+}
+
+.stitch-header::after {
+  bottom: 0;
+  background-image: radial-gradient(
+    circle at 50% 100%,
+    var(--cream) calc(var(--scallop) - 0.5px),
+    transparent var(--scallop)
+  );
+}
+
+.stitch-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--peach);
+}
+
+/* ---------- Contenu pleine largeur ---------- */
+.stitch-content {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 32px 24px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ---------- Bouton vidéo ---------- */
+.video-btn {
+  align-self: flex-start;
+  background: var(--rose);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.video-btn:hover {
+  background: var(--rose-dark);
+}
+
+/* ---------- Grille d'étapes ---------- */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.45);
+  border: 2px dashed var(--rose);
+  border-radius: 16px;
+  padding: 20px 22px;
+}
+
+.card h3 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--rose-dark);
+}
+
+.card p {
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 480px) {
+  .stitch-header { padding: 40px 16px; }
+  .stitch-header h1 { font-size: 1.3rem; }
+  .stitch-content { padding: 24px 14px 40px; }
+  .steps-grid { grid-template-columns: 1fr; }
+}

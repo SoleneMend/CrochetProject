@@ -1,0 +1,171 @@
+:host {
+  --cream: #f2ecda;
+  --coral: #e88d6e;
+  --coral-dark: #d4724f;
+  --peach: #f9cdb5;
+  --text: #5a4036;
+  --scallop: 9px; /* rayon des festons */
+
+  display: block;
+  background: var(--cream);
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+.pattern-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 18px; /* fine bande crème au-dessus du bandeau */
+}
+
+/* ---------- Bandeau avec bords festonnés ---------- */
+.pattern-header {
+  position: relative;
+  background: var(--coral);
+  padding: 56px 24px;
+  text-align: center;
+}
+
+.pattern-header::before,
+.pattern-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: var(--scallop);
+  background-size: calc(var(--scallop) * 2) var(--scallop);
+  background-repeat: repeat-x;
+}
+
+/* festons du haut */
+.pattern-header::before {
+  top: 0;
+  background-image: radial-gradient(
+    circle at 50% 0,
+    var(--cream) calc(var(--scallop) - 0.5px),
+    transparent var(--scallop)
+  );
+}
+
+/* festons du bas */
+.pattern-header::after {
+  bottom: 0;
+  background-image: radial-gradient(
+    circle at 50% 100%,
+    var(--cream) calc(var(--scallop) - 0.5px),
+    transparent var(--scallop)
+  );
+}
+
+.pattern-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--peach);
+}
+
+/* ---------- Contenu ---------- */
+.pattern-content {
+  padding: 32px 20px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.45);
+  border: 2px dashed var(--coral);
+  border-radius: 16px;
+  padding: 20px 22px;
+}
+
+.card h3 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--coral-dark);
+}
+
+.label {
+  margin: 12px 0 6px;
+  font-weight: 500;
+}
+
+/* ---------- Liens ---------- */
+a {
+  color: var(--coral-dark);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--coral);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+/* ---------- Matériels (pastilles) ---------- */
+.tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags li {
+  background: var(--coral);
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+/* ---------- Points ---------- */
+.stitch {
+  margin: 8px 0;
+}
+
+.abbr {
+  display: inline-block;
+  min-width: 42px;
+  margin-right: 6px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: var(--peach);
+  color: var(--coral-dark);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ---------- Étapes ---------- */
+.steps {
+  margin: 16px 0 0;
+  padding-left: 22px;
+}
+
+.steps li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.steps li::marker {
+  color: var(--coral);
+  font-weight: 600;
+}
+
+.steps strong {
+  color: var(--coral-dark);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 480px) {
+  .pattern-header { padding: 40px 16px; }
+  .pattern-header h1 { font-size: 1.3rem; }
+}
